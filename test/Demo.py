@@ -1,0 +1,31 @@
+import time
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.implicitly_wait(2)
+# time.sleep(2)
+driver.maximize_window()
+print("Hey User....! Bug report...")
+# print("Browser launched successfully....!")
+driver.get("https://marvelofficial.com/")
+print("Browser launched successfully....!")
+driver.find_element(By.XPATH, "(//a[.='Electricals & Tech'])[1]").click()
+driver.implicitly_wait(2)
+driver.execute_script("window.scrollTo(0,200)")
+time.sleep(2)
+print("Scroll action performed...!")
+driver.find_element(By.XPATH, "(//img[@width='247'])[3]").click()
+time.sleep(3)
+print("Image fetched successfully....!")
+time.sleep(2)
+driver.execute_script("window.scrollTo(0,350)")
+time.sleep(3)
+driver.find_element(By.XPATH, "//span[.='One Size']").click()
+time.sleep(3)
+print("Click action performed successfully....!")
+driver.find_element(By.XPATH, "(//button[@type='submit'])[2]").click()
+time.sleep(2)
+print("Item added to cart...!")
+driver.close()
